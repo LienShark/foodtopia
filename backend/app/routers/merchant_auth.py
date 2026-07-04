@@ -10,6 +10,7 @@ from app.schemas import (
     MerchantEmailLoginRequest, 
     TokenResponse, 
     MerchantLineLoginRequest,
+    MerchantUserRead,
 )
 from app.auth import hash_password
 from app.auth import verify_password, create_access_token, get_current_merchant_user
@@ -145,7 +146,7 @@ def login_merchant_line(
     }
 
 
-@router.get("/me")
+@router.get("/me", response_model=MerchantUserRead)
 def read_current_merchant_user(
     current_user: MerchantUser = Depends(get_current_merchant_user),
 ) -> MerchantUser:

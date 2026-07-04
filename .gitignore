@@ -8,6 +8,11 @@ backend/foodtopia/
 .venv/
 venv/
 
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+
 # Local editor and tooling files
 .idea/
 .vscode/
